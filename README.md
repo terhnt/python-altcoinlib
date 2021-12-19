@@ -1,5 +1,7 @@
 # python-altcoinlib
 
+Version: ```0.8.0-SNAPSHOT```
+
 This Python 3 library provides a wrapper around Peter Todd's python-bitcoinlib,
 extending it in order to add altcoin support (initially Dogecoin). Please
 consult python-bitcoinlib's documentation for an API overview.
