@@ -12,6 +12,7 @@
 
 from altcoin.core import CoreDogeMainParams, CoreDogeTestNetParams, _SelectCoreParams
 from altcoin.core import CoreLtcMainParams, CoreLtcTestNetParams
+from altcoin.core import CoreUnoMainParams
 from bitcoin.core import b2lx
 import bitcoin
 
@@ -41,6 +42,15 @@ __version__ = '0.8.0-SNAPSHOT'
 # Proof of work limit:
 # https://github.com/litecoin-project/litecoin/blob/master-0.8/src/main.cpp#L39 
 #
+class UnoMainParms(CoreUnoMainParams):
+    MESSAGE_START = b'\x03\xd5\xb5\x03'
+    DEFAULT_PORT = 65534
+    RPC_PORT = 65533
+    DNS_SEEDS = (('unobtanium.uno','node1.unobtanium.uno'),
+                 ('unobtanium.uno','node2.unobtanium.uno'))
+    BASE58_PREFIXES = {'PUBKEY_ADDR':130,
+                       'SCRIPT_ADDR':30,
+                       'SECRET_KEY' :224}
 
 class LtcMainParams(CoreLtcMainParams):
     MESSAGE_START = b'\xfb\xc0\xb6\xdb'
@@ -113,6 +123,7 @@ for current_params in [
       # doesn't associate the genesis block with its params
       # bitcoin.MainParams(),
       bitcoin.TestNetParams(),
+      UnoMainParams(),
       DogeMainParams(),
       DogeTestNetParams(),
       LtcMainParams(),
@@ -122,6 +133,7 @@ for current_params in [
 
 
 __all__ = (
+        'UnoMainParams',
         'LtcMainParams',
         'LtcTestNetParams',
         'DogeMainParams',
