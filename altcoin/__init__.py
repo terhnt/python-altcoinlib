@@ -42,7 +42,7 @@ __version__ = '0.8.0-SNAPSHOT'
 # Proof of work limit:
 # https://github.com/litecoin-project/litecoin/blob/master-0.8/src/main.cpp#L39 
 #
-class UnoMainParms(CoreUnoMainParams):
+class UnoMainParams(CoreUnoMainParams):
     MESSAGE_START = b'\x03\xd5\xb5\x03'
     DEFAULT_PORT = 65534
     RPC_PORT = 65533
