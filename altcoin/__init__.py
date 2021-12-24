@@ -45,12 +45,20 @@ __version__ = '0.8.0-SNAPSHOT'
 class UnoMainParams(CoreUnoMainParams):
     MESSAGE_START = b'\x03\xd5\xb5\x03'
     DEFAULT_PORT = 65534
-    RPC_PORT = 65533
+    RPC_PORT = 65535
     DNS_SEEDS = (('unobtanium.uno','node1.unobtanium.uno'),
                  ('unobtanium.uno','node2.unobtanium.uno'))
     BASE58_PREFIXES = {'PUBKEY_ADDR':130,
                        'SCRIPT_ADDR':30,
                        'SECRET_KEY' :224}
+class UnoTestNetParams(CoreUnoTestNetParams):
+    MESSAGE_START = b'\x01\x02\x03\x04'
+    DEFAULT_PORT = 65522
+    RPC_PORT = 65531
+    DNS_SEEDS = (('temporary','3.144.134.250'))
+    BASE58_PREFIXES = {'PUBKEY_ADDR':68,
+                       'SCRIPT_ADDR':30,
+                       'SECRET_KEY' :239}
 
 class LtcMainParams(CoreLtcMainParams):
     MESSAGE_START = b'\xfb\xc0\xb6\xdb'
@@ -124,6 +132,7 @@ for current_params in [
       # bitcoin.MainParams(),
       bitcoin.TestNetParams(),
       UnoMainParams(),
+      UnoTestNetParams(),
       DogeMainParams(),
       DogeTestNetParams(),
       LtcMainParams(),
@@ -134,6 +143,7 @@ for current_params in [
 
 __all__ = (
         'UnoMainParams',
+        'UnoTestNetParams',
         'LtcMainParams',
         'LtcTestNetParams',
         'DogeMainParams',
