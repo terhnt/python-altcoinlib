@@ -12,7 +12,7 @@
 
 from altcoin.core import CoreDogeMainParams, CoreDogeTestNetParams, _SelectCoreParams
 from altcoin.core import CoreLtcMainParams, CoreLtcTestNetParams
-from altcoin.core import CoreUnoMainParams
+from altcoin.core import CoreUnoMainParams, CoreUnoTestNetParams
 from bitcoin.core import b2lx
 import bitcoin
 
